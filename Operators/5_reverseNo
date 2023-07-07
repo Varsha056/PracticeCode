@@ -1,0 +1,25 @@
+/*
+
+reverse number
+*/
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+
+		int rev =0;
+		int temp=0;
+		while(num>0){
+			temp = num%10;
+			rev= rev*10 +temp;
+			num/=10;
+		}
+		System.out.print(rev);
+	}
+}
