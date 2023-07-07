@@ -1,0 +1,24 @@
+/*
+print the sum of all  even digits and sum of all  odd digits separately.
+*/
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int  sumEven =0;
+		int sumOdd = 0;
+		while(num>0){
+			int digitVal = num%10;
+			if(digitVal%2==0)
+			sumEven += digitVal;
+			else
+			sumOdd += digitVal;
+			num= num/10;
+		}
+		System.out.println(sumEven +" " + sumOdd);
+	}
+}
