@@ -1,0 +1,26 @@
+/*
+print factors of given num
+*/
+import java.util.Scanner;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        boolean flag = true;
+        if(num<3)
+        flag= true;
+        int i  = 2;
+        while( i<num){
+            if(num%i==0){
+                 System.out.print(i +" ");
+                 flag =false;
+            }
+            i++;
+        }
+        if(flag)
+        System.out.print(-1);
+    }
+}
