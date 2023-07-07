@@ -1,0 +1,17 @@
+/*
+ totalSalary = basic + hra + da + allow – pf
+ */
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		int salary = sc.nextInt();
+		char grade = sc.next().charAt(0);
+		int allow=(grade=='A')?1700:((grade=='B')?1500:1300);
+		double totalSalary = salary + (0.2*salary)+(0.5*salary)+allow-(0.11*salary);
+		System.out.println(Math.round(totalSalary));
+	}
+}
