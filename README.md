@@ -1,2 +1,2 @@
 # PracticeCode
-JavaDSBEgin
+JAVA DATA Structure and Algorithm
