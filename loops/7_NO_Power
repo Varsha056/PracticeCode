@@ -1,0 +1,27 @@
+/*
+find the power value of the given number
+ 3 number 4 power
+ 81
+
+*/
+import java.util.Scanner;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int pow = sc.nextInt();
+
+        if(pow==0){
+            System.out.print(1);
+            return;
+        }
+        int result =1;
+        for(int i =1; i<= pow ; i++){
+            result*=num;
+        }
+        System.out.print(result);
+    }
+}
