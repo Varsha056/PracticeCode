@@ -1,0 +1,82 @@
+//1. palindrome 
+public class Solution {
+    public static boolean palindromeNumber(int n){
+        // Write your code here.
+
+        int res=0;
+        int num=n;
+        while (n>0){
+            int temp = n%10;
+            res=(res*10)+temp;
+            n/=10;
+        }
+        return res==num;
+    }
+}
+
+//2. AP
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		boolean flag = true;
+		if(n<=2){
+			System.out.print(flag);
+			return;
+		}
+		int first = sc.nextInt();
+		int sec = sc.nextInt();
+		
+		int diff1= sec-first;
+		int diff2 =0;
+		for(int i=3;i<=n;i++){
+			int next = sc.nextInt();
+			diff2=next-sec;
+			sec=next;
+			if(diff1!=diff2){
+				flag = false;
+				break;
+			} 
+			
+		}
+		System.out.print(flag);
+
+	}
+}
+
+//3. 
+/*
+
+432*
+43*1
+4*21
+*321
+
+*/
+import java.util.Scanner;
+
+public class runner {
+
+	public static void main(String[] args) {
+		// Write your code here
+		Scanner sc = new Scanner(System.in);
+		int num= sc.nextInt();
+
+		for(int i=1;i<=num;i++){
+			for(int j=num;j>0;j--){
+				if(j==i){
+					System.out.print("*");
+				}else{
+					System.out.print(j);
+				}
+			}
+			System.out.println();
+
+		}
+
+	}
+}
