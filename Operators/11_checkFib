@@ -1,0 +1,31 @@
+/*
+check if given number is a fibonacci no
+public class Solution {
+	
+	public static boolean checkMember(int n){
+				
+		/* Your class should be named Solution
+		* Don't write main().
+	 	* Don't read input, it is passed as function argument.
+	 	* Return output and don't print it.
+	 	* Taking input and printing output is handled automatically.
+		*/
+		if(n<=1)
+		return true;
+		int first = 0, next =1, sum=0;
+
+		for(int i=2;;i++){
+			sum =next+first;
+			if(sum==n)
+			return true;
+			else if(sum>n){
+				return false;
+			}else{
+				first=next;
+				next=sum;
+			}
+		}
+	}
+	
+
+}
