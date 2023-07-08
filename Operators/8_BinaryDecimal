@@ -1,0 +1,31 @@
+/*
+Binary to decimal
+*/
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+		Scanner sc = new Scanner(System.in);
+		int binNum = sc.nextInt();
+
+		int count =1;
+		int temp=binNum;
+		while(temp>0){
+			temp/=10;
+			count++;
+		}
+		int sum=0;
+		
+		for(int i=0;i<count;i++){
+			temp=binNum%10;
+			if(temp==1){
+				sum+=Math.pow(2, i);
+			}
+			binNum/=10;
+		}
+		System.out.print(sum);
+	}
+}
