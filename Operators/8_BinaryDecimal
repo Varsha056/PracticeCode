@@ -13,6 +13,7 @@ public class Main {
 
 		int count =1;
 		int temp=binNum;
+//get the count of digit to use in loop
 		while(temp>0){
 			temp/=10;
 			count++;
