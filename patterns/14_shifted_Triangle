@@ -1,0 +1,54 @@
+/*
+
+*
+*1*
+*121*
+*12321*
+*121*
+*1*
+*
+
+*/
+import java.util.Scanner;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        System.out.println("*");
+        //upper triangle
+        for(int i =1; i<=num;i++){
+            System.out.print("*");
+          
+           for(int j=1;j<=i;j++){
+               System.out.print(j);
+           }
+           
+           for(int k =i-1;k>=1;k--){
+               System.out.print(k);
+           }
+            
+            System.out.print("*");
+            System.out.println();
+        }
+        //lower triangle
+        for(int i =1;i<num;i++){
+            System.out.print("*");
+
+            for(int j=1;j<num-i+1;j++){
+                System.out.print(j);
+            }
+            
+            for(int k =num-i-1;k>=1;k--){
+               System.out.print(k);
+           }
+
+            System.out.print("*");
+            System.out.println();
+        }
+        System.out.println("*");
+    }
+}
