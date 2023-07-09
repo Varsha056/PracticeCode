@@ -1,0 +1,107 @@
+/*
+1. An urn contains 8 balls : 4 red , 2 blue and 2 green. Now n balls are drawn out of the urn. Calculate the probability that out of n drawn balls exactly x balls are red.
+Find your answer multiplied by 100 and return the integer part.
+All required values for computation will be in integer range.
+x is always less than equal to 4 and x is always less than equal to n.
+*/
+public class Solution {
+    
+    public static int probability(int n,int x){
+
+        int outCome = ncrVal(4,x) * ncrVal(4,n-x);
+        int allBalls =ncrVal(8, n);
+        int res = (outCome*100)/allBalls;
+        return res;
+
+
+    }
+    public static int factorial(int n){
+        int fact =1;
+        for(int i=1;i<=n;i++){
+            fact*=i;
+        }
+        return fact;
+    }
+    public static int ncrVal(int n, int r){
+        int factn = factorial(n);
+        int factr = factorial(r);
+        int factnr = factorial(n-r);
+
+        return factn/(factr*factnr);
+
+    }
+    
+
+}
+
+/*
+
+2. find max number by removing any digit
+
+*/
+import java.util.Scanner;
+
+public class Solution {
+    
+    public static int max_number(int n){
+                
+       
+        for(int i =0;i<1;i++){
+            int res =0;
+            int j=1;
+            while(n/j >0){
+                int temp =(n/(j*10))*j+(n%j);
+                j*=10;
+                res=Math.max(res, temp);
+            }
+            n=res;
+        }
+        return n;
+    }
+    
+
+}
+
+/*
+ 3.
+1234554321
+1234**4321
+123****321
+12******21
+1********1
+
+*/
+
+
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+
+		// Write your code here		
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		
+		for(int i =1;i<=num;i++){
+			for(int j=1;j<=num-i+1;j++){
+				System.out.print(j);
+			}
+			for(int l =1;l<=i-1;l++){
+				System.out.print("*");
+			}
+			for(int m=1;m<=i-1;m++){
+				System.out.print("*");
+			}
+
+			for(int k=num-i+1;k>=1;k--){
+
+				System.out.print(k);
+			}
+
+			System.out.println();
+		}
+
+	}
+}
+
