@@ -44,7 +44,13 @@ import java.util.Scanner;
 public class Solution {
     
     public static int max_number(int n){
-                
+      /*
+num =6358
+(6358/(1*10))*1+6358%1 = 635+0
+(6358/(10*10))*10+6358%10=630+8
+(6358/(100*10))*100+6358%100=600+58
+(6358/(1000*10))*1000+6358%1000=358
+*/
        
         for(int i =0;i<1;i++){
             int res =0;
