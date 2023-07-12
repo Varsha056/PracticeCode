@@ -1,0 +1,26 @@
+/*
+i/p
+0101011
+o/p
+0001111
+*/
+public class Solution {  
+
+    public static void sortZeroesAndOne(int[] arr) {
+    	//Your code goes here
+        int end = arr.length-1;
+        int start =0;
+
+        while(start<end){
+            if(arr[start]==1){
+                if(arr[end]==0){
+                    arr[end]=arr[start]+arr[end];
+                    arr[start]=arr[end] -arr[start];
+                    arr[end]=arr[end]-arr[start];
+                }
+                end--;
+            }else
+            start++;
+        }
+    }
+}
