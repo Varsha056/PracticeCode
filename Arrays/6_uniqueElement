@@ -1,0 +1,23 @@
+/*
+find unique ele from array
+
+sol:
+use xor 
+xor through all element 
+
+*/
+public class Solution{  
+
+    public static int findUnique(int[] arr){
+		//Your code goes here
+    int len = arr.length;
+    if(len==1)
+    return arr[0];
+    int res =0;
+
+    for(int i:arr){
+      res^=i;
+    }
+    return res>0?res:-1;
+    }
+}
