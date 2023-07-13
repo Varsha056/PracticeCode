@@ -1,0 +1,22 @@
+/*
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+*/
+
+public static void main(String[] args) {
+        int prices[] ={7,1,5,3,6,4,20};
+        int maxVal=Integer.MIN_VALUE;
+        int profit =0;
+        int minPrice=prices[0];
+        for(int i=1;i<prices.length;i++){
+            if(minPrice<prices[i]){
+                profit=prices[i]-minPrice;
+                maxVal=Math.max(profit,maxVal);
+                
+            }else{
+                minPrice=prices[i];
+            }
+        } 
+        System.out.print(maxVal);
+    }
