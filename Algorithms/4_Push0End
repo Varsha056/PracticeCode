@@ -13,5 +13,22 @@ public class Solution {
             arr[count++]=0;
         }
     }
+//second method
+    public static void pushZerosAtEnd2(int[] arr) {
+        // Your code goes here
+        int k = 0;
+        for (int i = 0; i < arr.length;) {
+            if (arr[i] != 0) {
+                int t = arr[i];
+                arr[i] = arr[k];
+                arr[k] = t;
+                k++;
+                i++;
+            } else {
+                i++;
+            }
+        }
+    
+}
 
 }
