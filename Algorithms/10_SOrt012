@@ -1,0 +1,33 @@
+
+public class Solution {
+
+    public static void sort012(int[] arr){
+    	//Your code goes here
+
+        int end = arr.length-1;
+        int start =0;
+        int mid =0;
+
+       while(mid<=end){
+           switch(arr[mid]){
+               case 0:
+               int temp = arr[mid];
+               arr[mid] =arr[start];
+               arr[start]= temp;
+               mid++;
+               start++;
+               break;
+               case 1:
+               mid++;
+               break;
+               case 2:
+               temp = arr[mid];
+               arr[mid]= arr[end];
+               arr[end] = temp;
+               end--;
+               break;
+           }
+       }
+    }
+
+}
