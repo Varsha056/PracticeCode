@@ -1,0 +1,24 @@
+/*
+find second largest in array
+*/
+public class Solution {  
+
+    public static int secondLargestElement(int[] arr, int n) {
+    	//Your code goes here
+
+        int first = arr[0];
+        int second = Integer.MIN_VALUE;
+
+        for(int i =1;i<n;i++){
+            if(arr[i]>first){
+               second = first;
+               first = arr[i];
+            }else if(arr[i]>second){
+                second =arr[i];
+            }
+        }
+        return second;
+
+    }
+
+}
