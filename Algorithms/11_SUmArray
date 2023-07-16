@@ -1,0 +1,55 @@
+/*
+i/p
+6 2 4
+7 5 6
+o/p
+1 3 8 0
+
+
+i/p
+8 5 2
+1 3
+o/p
+0 8 6 5
+*/
+
+public class Solution {
+
+    public static void sumOfTwoArrays(int arr1[], int arr2[], int output[]) {
+    	//Your code goes here
+        int sum =0;
+        int carry =0;
+        int i =arr1.length-1;
+        int j= arr2.length-1;
+        for(int k = output.length-1;k>=0;k--){
+            // System.out.println(i+" "+j+"condition "+(i>=0 && j>=0));
+            if(i>=0 && j>=0){
+                sum = arr1[i]+arr2[j]+carry;
+                carry =sum/10;
+                sum =sum%10;
+                output[k]=sum;
+                i--;
+                j--;
+                continue;
+            }
+            if(i>=0){
+                  sum = arr1[i]+carry;
+                carry =sum/10;
+                sum =sum%10;
+                output[k]=sum;
+                i--;    
+            }
+            if(j>=0){
+                  sum = arr2[j]+carry;
+                carry =sum/10;
+                sum =sum%10;
+                output[k]=sum;
+                j--;
+                 
+            }
+
+        }
+            output[0]=carry;
+    }
+
+}
