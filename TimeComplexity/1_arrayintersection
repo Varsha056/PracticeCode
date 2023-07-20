@@ -1,0 +1,38 @@
+public class Solution {
+
+	public static void intersection(int[] arr1, int[] arr2) {
+	    //Your code goes here
+		int m = arr1.length;
+		int n = arr2.length;
+		sortArray(arr1,m);
+		sortArray(arr2,n);
+		
+		int i=0;
+		int j =0;
+		while(i<m && j<n){
+			if(arr1[i]==arr2[j]){
+				System.out.print(arr1[i]+" ");
+				i++;
+				j++;
+			}else if(arr1[i]<arr2[j]){
+				i++;
+			}else{
+				j++;
+			}
+
+		}
+
+	}
+
+	public static void sortArray(int []arr, int size){
+		//used insertion sort - use other
+		 for(int  i = 0;i<size;i++){
+            int temp = arr[i];
+            for( int j= i-1; j>=0 && temp<arr[j];j--){
+                    arr[j+1]=arr[j];
+                    arr[j]=temp;
+            }
+        }
+	}
+
+}
