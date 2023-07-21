@@ -1,0 +1,24 @@
+/*
+Given a string S (that can contain multiple words), you need to find the word which has minimum length.
+*/
+public class Solution {
+	
+	public static String minLengthWord(String input){
+		
+		// Write your code here
+		String [] sepString =input.split(" ");
+
+		int minIndex= Integer.MAX_VALUE;
+		StringBuilder sb = new StringBuilder();
+
+		for(int i = 0;i<sepString.length;i++){
+				if(sepString[i].length()<minIndex){
+				sb= new StringBuilder();
+				sb.append(sepString[i]);
+				minIndex= sepString[i].length();
+				}
+			
+		}
+		return sb.toString();
+	}
+}
