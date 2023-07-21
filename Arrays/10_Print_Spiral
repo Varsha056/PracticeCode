@@ -1,0 +1,61 @@
+/*
+4 4 
+1 2 3 4 
+5 6 7 8 
+9 10 11 12 
+13 14 15 16
+
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
+*/
+public class Solution {
+
+	public static void spiralPrint(int matrix[][]){
+		//Your code goes here
+		int count =0;
+		int m = matrix.length;
+		if(m<=0){
+			return;
+		}
+		int n = matrix[0].length;
+		int rowStart =0;
+		int rowEnd = m-1;
+		int colStart =0;
+		int colEnd = n-1;
+
+		while(count<m*n){
+//first row
+   for(int i=colStart;i<=colEnd;i++){
+				
+				System.out.print(matrix[rowStart][i]+" ");
+				
+				count++;
+			}
+			rowStart++;
+   //last Colmn
+			for(int i = rowStart;i<=rowEnd;i++){
+				
+				System.out.print(matrix[i][colEnd]+" ");
+				
+				count++;
+			}
+			colEnd--;
+   //lastrow
+			if(rowStart<rowEnd){ 
+			for(int i = colEnd;i>=colStart;i--){
+				System.out.print(matrix[rowEnd][i]+" ");
+				count++;
+			}
+			rowEnd--;
+			}
+			// firstcolumn
+			if(colStart<colEnd){
+			for(int i = rowEnd;i>=rowStart;i--){
+				System.out.print(matrix[i][colStart]+" ");
+				count++;
+			}
+			colStart++;
+			}
+			
+		}
+	}
+}
