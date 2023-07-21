@@ -1,0 +1,41 @@
+/*
+Given an integer array A of size n. Find and print all the leaders present in the input array. An array element A[i] is called Leader, if all the elements following it (i.e. present at its right) are less than or equal to A[i].
+Print all the leader elements separated by space and in the reverse order. That means whichever leader comes at last should be printed first.
+i/p
+3 12 34 2 0 -1
+o/p
+-1 0 2 34
+
+*/
+public class Solution {
+
+	public static void leaders(int[] input) {
+
+		int n = input.length-1;
+		boolean flag = true;
+		System.out.print(input[n]+" ");
+		for(int i=n-1;i>=0;i--)
+		{
+			for(int j =i+1;j<=n;j++)
+			{
+				if(input[i]>=input[j])
+				{
+					
+					flag =true;
+				}
+				else
+				{
+					flag = false;
+					break;
+				}
+			}
+			if(flag==true)
+			{
+				System.out.print(input[i]+" ");
+			}
+			
+		}
+		
+	}
+	
+}
