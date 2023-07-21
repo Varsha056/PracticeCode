@@ -12,12 +12,6 @@ o/p
 public class Solution {
 
 	public static long maximumSumPath(int[] input1, int[] input2) {
-		/* Your class should be named Solution
-		* Don't write main().
-		* Don't read input, they are passed as function arguments.
-		* Return output and don't print it.
-		* Taking input and printing output is handled automatically.
-		*/
 
 		long sum1=0;
 		long sum2=0;
