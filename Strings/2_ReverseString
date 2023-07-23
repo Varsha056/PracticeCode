@@ -1,0 +1,32 @@
+/*
+Reverse the given string word wise. 
+ Individual words should remain as it is.
+ i/p
+ Hello Coders
+ o/p
+ Coders Hello
+*/
+public class Solution {
+	public static String reverseWordWise(String input) {
+		// Write your code here
+		String [] str = input.split(" ");
+		int start = 0;
+		int end = str.length-1;
+		String
+		
+		while(start<end){
+			String temp = str[start];
+			str[start]=str[end];
+			str[end]=temp;
+			start++;
+			end--;
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for (String s : str)
+			sb.append(s).append(" ");
+		
+		return sb.toString();
+
+	}
+}
