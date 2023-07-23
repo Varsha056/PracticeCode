@@ -1,0 +1,25 @@
+/*
+abc
+a
+ab
+abc
+b
+bc
+c
+*/
+public class Solution {
+
+	public static void printSubstrings(String str) {
+
+		//Your code goes here
+
+		for(int i=0;i<str.length();i++){
+			String sb="";
+			for(int j=i;j<str.length();j++){
+				sb+=str.charAt(j);
+				System.out.println(sb);
+			}
+		}
+	}
+
+}
