@@ -1,0 +1,30 @@
+/*
+xxyyzxx
+xyzx
+*/
+public class Solution {
+
+	public static String removeConsecutiveDuplicates(String str) {
+		//Your code goes here
+		int i =0;
+		int j=1;
+		int count =1;
+		StringBuffer sb = new StringBuffer();
+		while( i<str.length()&& j<str.length() ){
+
+			if(str.charAt(i)!=str.charAt(j)){
+				sb.append(str.charAt(i));				
+			}
+			i++;
+			j++;
+		}
+		
+		
+		if(i<str.length())
+		sb.append(str.charAt(i));
+
+		return sb.toString();
+	
+	}
+
+}
