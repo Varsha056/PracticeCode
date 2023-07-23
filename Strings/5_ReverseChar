@@ -1,0 +1,38 @@
+/*
+i/p
+Always indent your code
+o/p
+syawlA tnedni ruoy edoc
+*/
+public class Solution {
+
+	public static String reverseEachWord(String str) {
+		//Your code goes here
+		String result="";
+
+		int curIndex=0;
+		for(int i =0;i<str.length();i++){
+			if(str.charAt(i)==' '){
+				int curEnd=i;
+				String revWord="";
+				for(int j=curIndex;j<curEnd;j++){
+					revWord= str.charAt(j)+revWord;
+				}
+				curIndex=i+1;
+				result+=revWord+" ";
+			}
+			
+		}
+		
+		if(curIndex<str.length()){
+			String revWord="";
+			for(int j=curIndex;j<str.length();j++){
+					revWord= str.charAt(j)+revWord;
+				}
+				result+=revWord+" ";
+		}
+		return result;
+
+	}
+
+}
