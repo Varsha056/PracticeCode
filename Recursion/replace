@@ -1,0 +1,23 @@
+/* 
+replace x
+ip 
+pxxp
+o/p 
+pp
+*/
+public class solution {
+
+	// Return the changed string
+	public static String removeX(String input){
+		// Write your code here
+		if(input.length()==0)
+		return input;
+
+		String smallInp = removeX(input.substring(1));
+		if(input.charAt(0)=='x')
+		return smallInp;
+		else
+		return input.charAt(0)+smallInp;
+	}
+
+}
