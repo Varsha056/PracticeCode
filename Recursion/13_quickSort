@@ -1,0 +1,44 @@
+
+
+
+public class Solution {
+	
+	public static void quickSort(int[] input,int startIndex, int endInedx) {
+	
+		if(startIndex>=endInedx)
+		return;
+        
+        int pivotIndex=partition(input,startIndex,endInedx);
+        quickSort(input,startIndex,pivotIndex-1);
+        quickSort(input,pivotIndex+1,endInedx);
+	}
+	public static int partition(int arr[],int start,int end){
+        int pivotElement=arr[start];
+        int smallerNumCount=0;
+        for(int i=start+1;i<=end;i++){
+            if(arr[i]<pivotElement){
+                smallerNumCount++;
+            }
+        }
+        int temp=arr[start+smallerNumCount];
+        arr[start+smallerNumCount]=pivotElement;
+        arr[start]=temp;
+        int i=start;
+        int j=end;
+        while(i<j){
+            if(arr[i]<pivotElement){
+                i++;
+            }else if(arr[j]>=pivotElement){
+                j--;
+            }else{
+                 temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                i++;
+                j--;
+            }
+        }
+        return start+smallerNumCount;
+    }
+	
+}
