@@ -24,8 +24,9 @@ public class Solution {
 			if(pos==0){
         //head
 				newNode.next=head;
-				head=newNode;
-				return head;
+				//head=newNode;
+				//return head;
+				return newNode;
 			}
 			if( count==pos-1){
 				newNode.next=temp.next;
