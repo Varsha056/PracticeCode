@@ -1,0 +1,29 @@
+import java.util.Stack;
+
+public class Solution {
+
+	public static boolean checkRedundantBrackets(String expression) {
+		//Your code goes here
+		char [] arrCh= expression.toCharArray();
+		Stack<Character> st = new Stack<>();
+
+		for(char c :expression.toCharArray()){
+			if(c==')'){
+				int count =0;
+				while(st.peek()!='('){
+					
+					count++;
+					st.pop();
+				}
+				st.pop();
+				if(count==0||count==1)
+				return true;
+			}
+			else{
+				st.push(c);
+			}
+			
+		}
+		return false;
+	}
+}
