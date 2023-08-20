@@ -27,3 +27,30 @@ public class Main {
 
 	}
 }
+//2nd approach
+/*
+    int ans[] = new int[x];
+        
+        // Declaring variable to have a look at number of elements in 'ANS' vector.
+        int got = 0;
+        
+        // Pointing to current number of series 3N + 2.
+        int curr = 5;
+        
+        // Running a loop until total number of elements in 'ANS' is not equal to 'X'.
+        while (got != x) {
+            
+            // If curr value of series is not divisible by 4 then we will append it at
+            // the end of 'ANS' vector and increment the value of 'GOT' by 1.
+            if (curr % 4 != 0) {
+                ans[got] = curr;
+                got++;
+            }
+            
+            // Getting the next value of series by incrementing by 3.
+            curr += 3;
+        }
+        
+        // Finally we will return our 'ANS' vector.
+        return ans;
+*/
