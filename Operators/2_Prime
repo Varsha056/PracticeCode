@@ -26,3 +26,25 @@ public class Solution {
 		}
 	}
 }
+--------------------------------------- 2nd method -----------------------------
+public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		if(num <=1) {
+		    	System.out.println("1"); 
+		    System.exit(0);
+		}
+		
+		boolean flag = true;
+		for(int i=2;i<=num;i++){
+		    if(flag){
+		    for(int j =2;j<=num/2;j++){
+		        if(num%j==0){
+		            flag =false;
+		            break;
+		        } 
+		    }
+		    }else break;
+		}
+		System.out.print(num + " is prime: "+ flag);
+    }
