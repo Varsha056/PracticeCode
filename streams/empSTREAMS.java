@@ -62,6 +62,17 @@ class Main {
            .collect(Collectors.toList());
            
            ageEmp.forEach(System.out::println);
-         
+        --------------------------------------------------------
+          Map<String, Optional<Employee>> maxSalaryByDept = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))
+            ));
+
+        // Printing the results
+        maxSalaryByDept.forEach((department, employeeOpt) -> {
+            employeeOpt.ifPresent(employee -> 
+                System.out.println("Department: " + department + ", Max Salary: " + employee));
+        });
     }
 }
